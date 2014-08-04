@@ -1,0 +1,64 @@
+<div  ng-controller="coreJavaController"   class="col-lg-9">
+
+
+    <div>
+        <h3>{{question[inc].id}}.{{question[inc].qtext}}</h3>
+
+        <span>{{selectoption}}</span>
+
+        <span  class="badge alert-info"><a target="_blank" download="{{topic}}_question{{question[inc].id}}.zip" href="{{question[inc].handOutLink}}">Download</a>
+            <span  class="badge alert-warning">{{question.length}}
+            </span>
+        </span>
+        <br>
+
+        <!--<a target="_blank" download="{{topic}}_question{{question[inc].id}}.zip" href="{{question[inc].handOutLink}}">Download</a>
+-->
+        <div  ng-repeat="item in question[inc].options">
+            <table>
+            <tr>
+                <td><input type="checkbox" id=option{{item.id}} checkbox-group unchecked="default" />{{item.option}}</td>
+                <td><div id={{item.id}} ></div></td>
+
+            </tr>
+            <br/>
+            </table>
+        </div>
+
+        <div ng-show="flag()"></div>
+
+
+
+
+
+
+
+       <!-- <div class="votingButton" ng-show=r"result()">
+
+            <i class=" icon-chevron-up icon-black"></i>
+        </div>
+        <div class="votingButton" ng-hide="!result()">
+
+            <i class=" icon-chevron-down  icon-black"></i>
+        </div>-->
+        <!--<div class="glyphicon-warning-sign" ng-hide="result()"></div>-->
+        <input type="button" id="prev"  value="<<Prev" ng-click="prev(inc)" disabled/>
+        <input type="button"  id="next" value="Next>>" ng-click="next(inc)" />
+        <input type="button" id="Check" value="Check" ng-click="result()"/>
+
+
+
+        {{score}}
+
+
+    </div>
+
+
+
+</div>
+
+<!--<div  ng-repeat="x in question[inc].options">
+    <input type="checkbox"  id="{{x.id}}" />{{x.option}}<br/>
+</div>
+
+<div ng-init="init()"></div>-->
